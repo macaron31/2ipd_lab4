@@ -9,7 +9,23 @@ int main()
 {
 	setlocale(0, "");
 
-	cout << (1 + 2) * (1 + 2 + 3) * (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10) << endl;
+	long long n = 1;
+
+	for (int i = 1; i <= 10; i++)
+	{
+		long long subSum = 0;
+
+		for (int j = 1; j <= i; j++)
+		{
+			subSum += j;
+		}
+		n *= subSum;
+	}
+
+	cout << n << endl;
+
+
+	return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
